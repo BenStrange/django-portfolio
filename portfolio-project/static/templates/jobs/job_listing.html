@@ -1,0 +1,26 @@
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+</head>
+  <body>
+    <main role="main">
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            {% for job in jobs.all %}
+            <div class="col-md-4">
+            <a href="{% if user.is_authenticated %}{% url 'detail' job.id %}{% else %}{% url 'login' %}{% endif %}">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{ job.image.url }}" alt="Job Image">
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+    </body>
+</html>

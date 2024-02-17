@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Ben Strange</h1>
+            <p class="lead text-muted">Talented and upcoming software engineer!</p>
+            <p>
+                <a href="mailto:ben__strange@hotmail.com" class="btn btn-primary my-2">Email Me</a>
+            </p>
+            <img src="{% static 'images/ben.jpg' %}" height="300" />
+        </div>
+    </section>
+    {% include "jobs/job_listing.html" %}
+</main>
+{% endblock %}
